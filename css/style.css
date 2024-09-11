@@ -28,6 +28,7 @@
      margin-top: 15;
      text-decoration: none;
      transition: 0.4s;
+     /* position: relative; */
 
 }
 
@@ -37,15 +38,29 @@
 } */
 
 
-.ulHeader  li  a {
-    text-decoration: none; 
+.ulHeader  li  a {   
     color: rgb(227, 234, 240);
-    font-weight: bold;
+    font-weight: bold;  
+    position: relative; 
+    text-decoration: none;
 }
-#k12:hover a{
-     color: rgb(169, 169, 173);
-       text-decoration: underline;    
-    /* transition: 02s;  */
+ 
+
+.ulHeader  li a:before {
+    content: '';   
+    font-weight: bold;
+    position: absolute;
+    width: 0;
+    height: 5px;
+    margin-bottom: -6px;
+    background-color: rgb(61, 8, 235);
+    bottom: 0;
+    opacity: 0;
+}
+.ulHeader  li a:hover::before {
+    width:100%;   
+    opacity: 1;
+    transition: 1s;
 }
 
 .imag_H_logo{
@@ -98,7 +113,7 @@
 .btn {
     /* color: rgb(10, 80, 141); */
     padding: 10px  20px;
-    border: 1px; solid black;
+    border: 1px solid black;
     border-radius: 4px;
     font-size: 16px;
     text-transform: capitalize;
@@ -173,11 +188,11 @@ color: rgb(253, 253, 253);
     color: rgb(195, 200, 204);
 }
 
-a{
+/* a{
     color: rgb(58, 17, 244);
     text-transform: capitalize;
     text-decoration: none;
-}
+} */
 
 .divW:hover a{
     color: rgb(47, 132, 242);
@@ -534,7 +549,8 @@ a{
     line-height: 30px;    
     margin: 0px 20px 0px 0px;
     font-size: 14px;
-    list-style-image: url(../Images/likeIcon.png);
+    list-style: none;
+    /* list-style-image: url(../Images/likeIcon.png); */
 }
 .div-chos-info ul li{    
     margin: 0px 0px 0px 10px;
